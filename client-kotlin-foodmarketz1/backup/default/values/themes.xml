@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.YogaDimasFoodMarketBWA" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.YogaDimasFoodMarketBWA" parent="Base.Theme.YogaDimasFoodMarketBWA" />
+
+    <!-- Custom - Splash Activity   -->
+    <style name="Splash.Theme" parent="Theme.Material3.Light.NoActionBar">
+        <!--                <item name="android:windowIsTranslucent">true</item>-->
+        <item name="android:backgroundTint">@color/colorYellow</item>
+        <item name="android:navigationBarColor">@color/colorYellow</item>
+        <item name="android:statusBarColor">@color/colorYellow</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+
+    </style>
+
+
+
+
+</resources>

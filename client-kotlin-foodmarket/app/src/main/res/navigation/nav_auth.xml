@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/fragmentSignIn"
+    android:id="@+id/nav_auth">
+
+    <fragment android:id="@+id/fragmentSignIn"
+        android:name="com.yogadimas.yogadimas_foodmarketbwa.ui.auth.signin.SigninFragment"
+        tools:layout="@layout/fragment_signin">
+
+        <action
+            android:id="@+id/action_fragmentSignIn_to_signupFragment"
+            app:destination="@id/signupFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.yogadimas.yogadimas_foodmarketbwa.ui.auth.signup.SignupFragment"
+        tools:layout="@layout/fragment_signup">
+        <action
+            android:id="@+id/action_signupFragment_to_signupAddressFragment"
+            app:destination="@id/signupAddressFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/signupAddressFragment"
+        android:name="com.yogadimas.yogadimas_foodmarketbwa.ui.auth.signup.SignupAddressFragment"
+        tools:layout="@layout/fragment_signup_address">
+        <action
+            android:id="@+id/action_signupAddressFragment_to_signupSuccessFragment"
+            app:destination="@id/signupSuccessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupSuccessFragment"
+        android:name="com.yogadimas.yogadimas_foodmarketbwa.ui.auth.signup.SignupSuccessFragment"
+        android:label="fragment_signup_success"
+        tools:layout="@layout/fragment_signup_success" />
+
+</navigation>

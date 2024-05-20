@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">Yoga Dimas - Foodmarket BWA</string>
+
+    <string name="title_foodmarket">FoodMarket</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="text_email_address">Email Address</string>
+    <string name="text_password">Password</string>
+    <string name="text_phone">Phone No.</string>
+    <string name="text_address">Address</string>
+    <string name="text_house_no">House No.</string>
+    <string name="text_city">City</string>
+
+    <string name="text_full_name">Full Name</string>
+    <string name="text_hint_email_address">Type your email address</string>
+    <string name="text_hint_password">Type your password</string>
+    <string name="text_hint_full_name">Type your full name</string>
+    <string name="text_hint_phone">Type your phone number</string>
+    <string name="text_hint_address">Type your address</string>
+    <string name="text_hint_house_no">Type your house no</string>
+    <string name="text_hint_city">Type your city</string>
+
+    <string name="text_continue">Continue</string>
+    <string name="text_sign_in">Sign In</string>
+    <string name="text_sign_up_now">Sign Up Now</string>
+    <string name="text_create_new_account">Create New Account</string>
+    <string name="text_find_your_best_ever_meal">Find your best ever meal</string>
+    <string name="text_sign_up">Sign Up</string>
+    <string name="text_register_and_eat">Register and eat</string>
+    <string name="text_signup_success_1">Yeay! completed</string>
+    <string name="text_signup_success_2">Now you are able to order\nsome foods as a self-reward</string>
+    <string name="text_find_foods">Find Foods</string>
+    <string name="text_make_sure_it_s_valid">Make sure it\'s valid</string>
+
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_order">Order</string>
+    <string name="title_profile">Profile</string>
+    <string name="text_let_s_get_some_foods">Let’s get some foods</string>
+    <string name="text_dummy_item_title_cherry_healthy">Cherry Healthy</string>
+
+    <string name="ini_adalah_icon_ok">ini adalah icon ok</string>
+    <string name="text_dummy_rp_28_000">Rp. 28.000</string>
+
+
+    <string name="text_new_taste">New Taste</string>
+    <string name="text_popular">Popular</string>
+    <string name="text_recommended">Recommended</string>
+    <string name="text_seem_like_you_have_not_nordered_any_food_yet">Seem like you have not\nordered any food yet</string>
+    <string name="text_ouch_hungry">Ouch! Hungry</string>
+    <string name="text_dummy_yoga_dimas">Yoga Dimas</string>
+    <string name="text_dummy_wepanda_gmail_com">wepanda@gmail.com</string>
+    <string name="account">Account</string>
+    <string name="text_dummy_food_desc">Makanan khas Bandung yang cukup sering dipesan oleh anak muda dengan pola makan yang cukup tinggi dengan mengutamakan diet yang sehat dan teratur.</string>
+    <string name="text_ingredients_colon">Ingredients:</string>
+    <string name="text_dummy_ingredients_value">Seledri, telur, blueberry, madu.</string>
+    <string name="text_total_price_colon">Total price:</string>
+    <string name="text_order_now">Order Now</string>
+    <string name="text_payment">Payment</string>
+    <string name="text_you_deserve_better_meal">You deserve better meal</string>
+    <string name="text_dummy_0857_5814_5632">0857 5814 5632</string>
+    <string name="text_dummy_address_value">jalan Pinang</string>
+    <string name="text_dummy_city_value">Bandung</string>
+    <string name="text_name">Name</string>
+    <string name="text_deliver_to_colon">Deliver to:</string>
+    <string name="text_total_price">Total Price</string>
+    <string name="text_tax_10">Tax 10%</string>
+    <string name="text_driver">Driver</string>
+    <string name="text_dummy_1_items">1 items</string>
+    <string name="text_dummy_idr_28_000">IDR 28.000</string>
+    <string name="text_dummy_idr_8_000">IDR 8.000</string>
+    <string name="text_dummy_idr_3_800">IDR 3.800</string>
+    <string name="text_dummy_idr_40_600">IDR 40.600</string>
+    <string name="text_checkout_now">Checkout Now</string>
+    <string name="text_details_transaction">Details Transaction</string>
+    <string name="text_item_ordered">Item Ordered</string>
+    <string name="text_view_my_order">View My Order</string>
+    <string name="text_order_other_food">Order other food</string>
+    <string name="text_just_stay_at_home_while_we_are_npreparing_your_best_foods">Just stay at home while we are\npreparing your best foods</string>
+    <string name="text_you_ve_made_order">You\'ve Made Order</string>
+
+</resources>
