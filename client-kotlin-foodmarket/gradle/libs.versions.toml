@@ -11,6 +11,14 @@ activity = "1.9.0"
 constraintlayout = "2.1.4"
 
 
+retrofit2AdapterRxjava2Version = "2.6.2"
+okhttp3LoggingInterceptorVersion = "3.11.0"
+rxjava2RxandroidVersion = "2.0.2"
+rxjava2RxkotlinVersion = "2.2.0"
+retrofit2RetrofitVersion = "2.4.0"
+retrofit2ConverterGsonVersion = "2.4.0"
+
+
 glide = "4.16.0"
 
 navigationFragmentKtx = "2.7.7"
@@ -27,6 +35,13 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+
+retrofit2AdapterRxjava2 = { module = "com.squareup.retrofit2:adapter-rxjava2", version.ref = "retrofit2AdapterRxjava2Version" }
+okhttp3LoggingInterceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp3LoggingInterceptorVersion" }
+rxjava2Rxandroid = { module = "io.reactivex.rxjava2:rxandroid", version.ref = "rxjava2RxandroidVersion" }
+rxjava2Rxkotlin = { module = "io.reactivex.rxjava2:rxkotlin", version.ref = "rxjava2RxkotlinVersion" }
+retrofit2Retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit2RetrofitVersion" }
+retrofit2ConverterGson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit2ConverterGsonVersion" }
 
 
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }

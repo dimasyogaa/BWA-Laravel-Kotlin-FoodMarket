@@ -38,9 +38,27 @@ android {
         viewBinding = true
         buildConfig = true
     }
+
+    productFlavors {
+        create("dev") {
+            applicationIdSuffix = ".dev"
+            buildConfigField("String", "BASE_URL", "\"http://192.168.177.106:8000/api/\"")
+        }
+    }
+
+
 }
 
 dependencies {
+
+
+    // networking - asynchronous
+    implementation(libs.retrofit2AdapterRxjava2)
+    implementation(libs.okhttp3LoggingInterceptor)
+    implementation(libs.rxjava2Rxandroid)
+    implementation(libs.rxjava2Rxkotlin)
+    implementation(libs.retrofit2Retrofit)
+    implementation(libs.retrofit2ConverterGson)
 
     // glide
     implementation (libs.glide)
