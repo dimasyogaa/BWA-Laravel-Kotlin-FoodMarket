@@ -48,16 +48,34 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcList"
         android:layout_width="match_parent"
         android:layout_height="222dp"
         android:layout_marginTop="24dp"
+        android:alpha="0"
         android:clipChildren="false"
         android:clipToPadding="false"
         android:paddingHorizontal="12dp"
         tools:itemCount="1"
         tools:listitem="@layout/item_home_horizontal" />
+
+        <View
+            android:id="@+id/viewDisableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="222dp"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:layout_marginTop="24dp"
+            android:focusable="true"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"

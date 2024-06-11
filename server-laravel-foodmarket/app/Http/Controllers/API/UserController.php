@@ -11,6 +11,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -60,38 +61,44 @@ class UserController extends Controller
     public function register(Request $request): JsonResponse
     {
         try {
+            // Validasi input
             $request->validate([
                 'name' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-                'password' => $this->passwordRules()
+                'password' => ['required', 'string', 'min:8'], // Atur aturan kata sandi sesuai kebutuhan
             ]);
 
-            User::create([
+            // Buat pengguna baru
+            $user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,
-                'address' => $request->address,
-                'houseNumber' => $request->houseNumber,
-                'phoneNumber' => $request->phoneNumber,
-                'city' => $request->city,
+                'address' => $request->address ?? '', // Opsional, sesuaikan jika field ini tidak wajib
+                'houseNumber' => $request->houseNumber ?? '', // Opsional
+                'phoneNumber' => $request->phoneNumber ?? '', // Opsional
+                'city' => $request->city ?? '', // Opsional
                 'password' => Hash::make($request->password),
             ]);
 
             $user = User::where('email', $request->email)->first();
 
+            // Buat token otentikasi untuk API
             $tokenResult = $user->createToken('authToken')->plainTextToken;
 
+            // Kembalikan respons berhasil dengan token dan detail pengguna
             return ResponseFormatter::success([
                 'access_token' => $tokenResult,
                 'token_type' => 'Bearer',
                 'user' => $user
-            ],'User Registered');
+            ], 'User Registered and Logged In');
         } catch (Exception $error) {
+            // Tangani error dan kembalikan respons error
             return ResponseFormatter::error([
                 'message' => 'Something went wrong',
-                'error' => $error,
-            ],'Authentication Failed', 500);
+                'error' => $error->getMessage(),
+            ], 'Registration Failed', 500);
         }
     }
+
     public function logout(Request $request): JsonResponse
     {
         $token = $request->user()->currentAccessToken()->delete();
@@ -117,13 +124,11 @@ class UserController extends Controller
 
     public function updatePhoto(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'file' => 'required|image|max:2048',
-        ]);
 
-        if ($validator->fails()) {
-            return ResponseFormatter::error(['error'=>$validator->errors()], 'Update Photo Fails', 401);
-        }
+        $this->validatorImage($request);
+
+        $user = Auth::user();
+
 
         if ($request->file('file')) {
 
@@ -135,6 +140,15 @@ class UserController extends Controller
             $user->update();
 
             return ResponseFormatter::success([$file],'File successfully uploaded');
+        }
+    }
+
+    private function validatorImage(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'file' => 'required|image|max:2048',
+        ]);
+        if ($validator->fails()) {
+            return ResponseFormatter::error(['error'=>$validator->errors()], 'Update Photo Fails', 401);
         }
     }
 }

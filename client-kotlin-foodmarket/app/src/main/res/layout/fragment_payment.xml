@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/ydFmColorSurfaceLow"
-    tools:context=".ui.detail.PaymentFragment">
+    tools:context=".ui.detail.payment.PaymentFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:background="?attr/ydFmColorSurfaceLow"
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout

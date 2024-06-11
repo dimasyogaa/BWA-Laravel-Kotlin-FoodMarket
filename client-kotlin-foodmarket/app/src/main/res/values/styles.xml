@@ -71,6 +71,12 @@
         <item name="android:textSize">14sp</item>
     </style>
 
+    <style name="TextView.PoppinsNormal12sp202020">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/colorBlack2</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
     <style name="TextView.PoppinsNormal14sp1ABC9C">
         <item name="android:fontFamily">@font/poppins</item>
         <item name="android:textColor">@color/colorGreen</item>

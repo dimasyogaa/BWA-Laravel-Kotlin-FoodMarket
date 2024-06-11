@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.yogadimas.yogadimas_foodmarketbwa.data.dummy.ProfileMenuModel
 import com.yogadimas.yogadimas_foodmarketbwa.databinding.FragmentProfileAccountBinding
-import com.yogadimas.yogadimas_foodmarketbwa.model.dummy.ProfileMenuModel
 import com.yogadimas.yogadimas_foodmarketbwa.ui.profile.ProfileMenuAdapter
 
 

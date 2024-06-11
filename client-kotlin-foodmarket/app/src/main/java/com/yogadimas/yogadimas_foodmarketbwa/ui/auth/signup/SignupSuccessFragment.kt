@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import com.yogadimas.yogadimas_foodmarketbwa.databinding.FragmentSignupSuccessBinding
 import com.yogadimas.yogadimas_foodmarketbwa.ui.MainActivity
@@ -27,13 +28,25 @@ class SignupSuccessFragment : Fragment() {
 
         binding.apply {
             btnFind.setOnClickListener {
-                val home = Intent(activity, MainActivity::class.java)
-                startActivity(home)
-                activity?.finishAffinity()
+                goToHome()
             }
         }
 
+        val callback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                goToHome()
+            }
+        }
 
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
+
+
+    }
+
+    private fun goToHome() {
+        val home = Intent(activity, MainActivity::class.java)
+        startActivity(home)
+        activity?.finishAffinity()
     }
 
     override fun onDestroyView() {

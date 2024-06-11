@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="?attr/ydFmColorSurfaceLow"
     android:layout_height="match_parent"
+    android:background="?attr/ydFmColorSurfaceLow"
     tools:context=".ui.order.OrderFragment">
 
     <include
@@ -13,46 +13,47 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-<!--    <androidx.coordinatorlayout.widget.CoordinatorLayout-->
-<!--        android:id="@+id/ll_tab"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_marginTop="24dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/include_toolbar">-->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/ll_tab"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include_toolbar">
 
-<!--        <com.google.android.material.appbar.AppBarLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:backgroundTint="?attr/ydFmColorSurface">-->
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="?attr/ydFmColorSurface">
 
-<!--            <com.google.android.material.tabs.TabLayout-->
-<!--                android:id="@+id/tab_layout"-->
-<!--                style="@style/Widget.App.TabLayout"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content" />-->
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                style="@style/Widget.App.TabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-<!--        </com.google.android.material.appbar.AppBarLayout>-->
 
-<!--        <androidx.viewpager.widget.ViewPager-->
-<!--            android:id="@+id/viewPager"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />-->
+        </com.google.android.material.appbar.AppBarLayout>
 
-<!--    </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <LinearLayout
         android:id="@+id/ll_empty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
+        android:background="?attr/ydFmColorSurfaceLow"
         android:gravity="center"
         android:orientation="vertical"
-        android:visibility="visible"
-        android:background="?attr/ydFmColorSurfaceLow"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

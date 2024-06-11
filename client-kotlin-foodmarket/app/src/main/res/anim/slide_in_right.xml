@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <translate android:fromXDelta="100%" android:toXDelta="0%"
+        android:fromYDelta="0%" android:toYDelta="0%"
+        android:duration="700"/>
+
+</set>
+
+<!-- Kode di atas akan membuat animasi dari kanan(x = 100) ke kiri (x = 0) dalam waktu 700 ms / 0.7 detik. -->

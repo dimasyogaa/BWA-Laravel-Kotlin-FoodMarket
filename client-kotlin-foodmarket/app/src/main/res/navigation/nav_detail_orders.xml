@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_detail_orders.xml"
+    app:startDestination="@id/ordersDetailFragment">
+
+    <fragment
+        android:id="@+id/ordersDetailFragment"
+        android:name="com.yogadimas.yogadimas_foodmarketbwa.ui.order.detailsorders.OrdersDetailFragment"
+        android:label="fragment_orders_detail"
+        tools:layout="@layout/fragment_orders_detail" />
+</navigation>

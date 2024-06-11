@@ -68,6 +68,10 @@
                             </div>
                             <div class="w-1/6">
                                 <div class="text-sm mb-1">Change Status</div>
+                                <a href="{{ route('transactions.changeStatus', ['id' => $item->id, 'status' => 'PENDING']) }}"
+                                   class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-2 rounded block text-center w-full mb-1">
+                                    Pending
+                                </a>
                                 <a href="{{ route('transactions.changeStatus', ['id' => $item->id, 'status' => 'ON_DELIVERY']) }}"
                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-2 rounded block text-center w-full mb-1">
                                     On Delivery
@@ -75,6 +79,10 @@
                                 <a href="{{ route('transactions.changeStatus', ['id' => $item->id, 'status' => 'DELIVERED']) }}"
                                    class="bg-green-500 hover:bg-green-700 text-white font-bold px-2 rounded block text-center w-full mb-1">
                                     Delivered
+                                </a>
+                                <a href="{{ route('transactions.changeStatus', ['id' => $item->id, 'status' => 'SUCCESS']) }}"
+                                   class="bg-green-500 hover:bg-green-700 text-white font-bold px-2 rounded block text-center w-full mb-1">
+                                    Success
                                 </a>
                                 <a href="{{ route('transactions.changeStatus', ['id' => $item->id, 'status' => 'CANCELLED']) }}"
                                    class="bg-red-500 hover:bg-red-700 text-white font-bold px-2 rounded block text-center w-full mb-1">

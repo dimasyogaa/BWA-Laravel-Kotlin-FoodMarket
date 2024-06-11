@@ -6,15 +6,22 @@ use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Controller;
 use App\Models\Food;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class FoodController extends Controller
 {
     public function all(Request $request)
     {
+
+        $page = $request->query('page', 1);
+        $size = $request->query('per_page', 3);
+        $types = $request->query('types');
+
+
         $id = $request->input('id');
-        $limit = $request->input('limit', 6);
+//        $limit = $request->input('limit', 6);
         $name = $request->input('name');
-        $types = $request->input('types');
+//        $types = $request->input('types');
 
         $price_from = $request->input('price_from');
         $price_to = $request->input('price_to');
@@ -59,7 +66,24 @@ class FoodController extends Controller
             $food->where('rate', '<=', $rate_to);
 
         return ResponseFormatter::success(
-            $food->paginate($limit),
+            $food->paginate(perPage: $size, page: $page),
+            'Data list produk berhasil diambil'
+        );
+    }
+
+    public function types(Request $request)
+    {
+        $types = $request->query('types');
+
+
+        $food = Food::query();
+
+        $food->where('types', 'like', '%' . $types . '%');
+
+
+
+        return ResponseFormatter::success(
+            $food->paginate(perPage: $food->count()),
             'Data list produk berhasil diambil'
         );
     }

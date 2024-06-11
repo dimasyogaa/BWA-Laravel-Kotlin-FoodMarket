@@ -8,6 +8,8 @@ use App\Models\Transaction;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Midtrans\Config;
 use Midtrans\Snap;
 
@@ -20,11 +22,10 @@ class TransactionController extends Controller
         $food_id = $request->input('food_id');
         $status = $request->input('status');
 
-        if($id)
-        {
-            $transaction = Transaction::with(['food','user'])->find($id);
+        if ($id) {
+            $transaction = Transaction::with(['food', 'user'])->find($id);
 
-            if($transaction)
+            if ($transaction)
                 return ResponseFormatter::success(
                     $transaction,
                     'Data transaksi berhasil diambil'
@@ -37,16 +38,18 @@ class TransactionController extends Controller
                 );
         }
 
-        $transaction = Transaction::with(['food','user'])->where('user_id', Auth::user()->id);
+        $transaction = Transaction::with(['food', 'user'])->where('user_id', Auth::user()->id);
 
-        if($food_id)
+        if ($food_id)
             $transaction->where('food_id', $food_id);
 
-        if($status)
+        if ($status)
             $transaction->where('status', $status);
 
+
         return ResponseFormatter::success(
-            $transaction->paginate($limit),
+
+            $transaction->paginate(perPage: $transaction->count()),
             'Data list transaksi berhasil diambil'
         );
     }
@@ -77,19 +80,42 @@ class TransactionController extends Controller
         Config::$is3ds = config('services.midtrans.is3ds');
 
         // Panggil transaksi yang tadi dibuat
-        $transaction = Transaction::with(['food','user'])->find($transaction->id);
+        $transaction = Transaction::with(['food', 'user'])->find($transaction->id);
+        Log::info((int)$transaction->total);
 
         // Membuat Transaksi Midtrans
         $midtrans = array(
             'transaction_details' => array(
-                'order_id' =>  $transaction->id,
-                'gross_amount' => (int) $transaction->total,
+                'order_id' => $transaction->id,
+                'gross_amount' => (int)$transaction->total,
             ),
             'customer_details' => array(
-                'first_name'    => $transaction->user->name,
-                'email'         => $transaction->user->email
+                'first_name' => $transaction->user->name,
+                'email' => $transaction->user->email,
+                'phone' => $transaction->user->phoneNumber,
+                'billing_address' => array(
+                    'first_name' => $transaction->user->name,
+                    'email' => $transaction->user->email,
+                    'phone' => $transaction->user->phoneNumber,
+                    'address' => $transaction->user->address,
+                    'city' => $transaction->user->city
+                ),
+                "shipping_address" => array(
+                    'first_name' => $transaction->user->name,
+                    'email' => $transaction->user->email,
+                    'phone' => $transaction->user->phoneNumber,
+                    'address' => $transaction->user->address,
+                    'city' => $transaction->user->city
+                )),
+            'item_details' => array(
+                array(
+                    'id' => $transaction->food->id,
+                    'price' => $transaction->total,
+                    'quantity' => $transaction->quantity,
+                    'name' => $transaction->food->name
+                )
             ),
-            'enabled_payments' => array('gopay','bank_transfer'),
+            'enabled_payments' => array('gopay', 'bank_transfer'),
             'vtweb' => array()
         );
 
@@ -102,10 +128,9 @@ class TransactionController extends Controller
             $transaction->save();
 
             // Redirect ke halaman midtrans
-            return ResponseFormatter::success($transaction,'Transaksi berhasil');
-        }
-        catch (Exception $e) {
-            return ResponseFormatter::error($e->getMessage(),'Transaksi Gagal');
+            return ResponseFormatter::success($transaction, 'Transaksi berhasil');
+        } catch (Exception $e) {
+            return ResponseFormatter::error($e->getMessage(), 'Transaksi Gagal');
         }
     }
 
@@ -116,6 +141,6 @@ class TransactionController extends Controller
 
         $transaction->update($request->all());
 
-        return ResponseFormatter::success($transaction,'Transaksi berhasil diperbarui');
+        return ResponseFormatter::success($transaction, 'Transaksi berhasil diperbarui');
     }
 }

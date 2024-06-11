@@ -3,9 +3,9 @@ package com.yogadimas.yogadimas_foodmarketbwa.ui.profile
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.yogadimas.yogadimas_foodmarketbwa.data.dummy.ProfileMenuModel
 import com.yogadimas.yogadimas_foodmarketbwa.databinding.ItemMenuProfileBinding
 import com.yogadimas.yogadimas_foodmarketbwa.interfaces.ItemAdapterCallback
-import com.yogadimas.yogadimas_foodmarketbwa.model.dummy.ProfileMenuModel
 
 class ProfileMenuAdapter(
     private val listData: List<ProfileMenuModel>,

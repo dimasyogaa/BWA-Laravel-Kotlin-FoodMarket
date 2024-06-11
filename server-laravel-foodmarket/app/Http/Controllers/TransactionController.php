@@ -36,7 +36,6 @@ class TransactionController extends Controller
 
     public function show(Transaction $transaction): View
     {
-        Log::info($transaction->food->picturePath);
         return view('transactions.detail', [
             'item' => $transaction
         ]);

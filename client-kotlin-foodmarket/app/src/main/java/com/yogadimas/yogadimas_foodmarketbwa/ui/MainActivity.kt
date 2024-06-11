@@ -34,4 +34,8 @@ class MainActivity : AppCompatActivity() {
         val navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main)
         NavigationUI.setupWithNavController(navView, navController)
     }
+
+    companion object {
+        const val KEY_DATA = "key_data"
+    }
 }

@@ -83,5 +83,20 @@
     <string name="text_order_other_food">Order other food</string>
     <string name="text_just_stay_at_home_while_we_are_npreparing_your_best_foods">Just stay at home while we are\npreparing your best foods</string>
     <string name="text_you_ve_made_order">You\'ve Made Order</string>
+    <string name="retry">Coba lagi</string>
+
+    <string name="text_failed_loading_data_from_internet">Gagal Memuat Data Dari Internet</string>
+    <string name="text_refresh">Refresh</string>
+    <string name="text_your_orders">Your Orders</string>
+    <string name="text_wait_for_the_best_meal">Wait for the best meal</string>
+    <string name="text_in_progress">In Progress</string>
+    <string name="text_past_orders">Past Orders</string>
+    <string name="text_cancel_my_order">Cancel My Order</string>
+    <string name="text_order_status_colon">Order Status:</string>
+    <string name="text_paid">Paid</string>
+    <string name="text_dummy_house_no">A5 Hook</string>
+    <string name="text_pay_now">Pay Now</string>
+    <string name="text_pending">Pending</string>
+    <string name="text_cancelled">Cancelled</string>
 
 </resources>

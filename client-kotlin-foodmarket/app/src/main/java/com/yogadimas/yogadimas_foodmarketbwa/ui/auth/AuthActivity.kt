@@ -31,7 +31,7 @@ class AuthActivity : AppCompatActivity() {
         }
     }
 
-    private fun toolbarSignUp() {
+    fun toolbarSignUp() {
         binding.layoutToolbar.toolbar.apply {
             title = getString(R.string.text_sign_up)
             subtitle = getString(R.string.text_register_and_eat)

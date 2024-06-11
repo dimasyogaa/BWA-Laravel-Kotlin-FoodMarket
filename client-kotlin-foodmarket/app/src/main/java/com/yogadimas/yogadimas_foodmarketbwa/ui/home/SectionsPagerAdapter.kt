@@ -11,11 +11,14 @@ import com.yogadimas.yogadimas_foodmarketbwa.ui.home.recommended.HomeRecommended
 class SectionsPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fragmentManager, lifecycle) {
 
-    // var newTasteList:MutableList<HomeModel>? = mutableListOf()
-    // var popularList:MutableList<HomeModel>? = mutableListOf()
-    // var recommendedList:MutableList<HomeModel>? = mutableListOf()
-
-    // fun setData(newTasteListParms : MutableList<HomeModel>?, popularListParms : MutableList<HomeModel>?, recomendedListParms : MutableList<HomeModel>?) {
+    // private var newTasteList:MutableList<Data>? = mutableListOf()
+    // private var popularList:MutableList<Data>? = mutableListOf()
+    // private var recommendedList:MutableList<Data>? = mutableListOf()
+    //
+    // fun setData(newTasteListParms : MutableList<Data>?, popularListParms : MutableList<Data>?, recomendedListParms : MutableList<Data>?) {
+    //     newTasteList?.clear()
+    //     popularList?.clear()
+    //     recommendedList?.clear()
     //     newTasteList = newTasteListParms
     //     popularList = popularListParms
     //     recommendedList = recomendedListParms
@@ -32,12 +35,24 @@ class SectionsPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycl
             0 -> {
                 fragment = HomeNewTasteFragment()
                 // fragment.arguments = Bundle().apply {
-                //     putParcelableArrayList("data", newTasteList)
+                //     putParcelableArrayList(MainActivity.KEY_DATA, newTasteList?.let { ArrayList(it) })
                 // }
             }
 
-            1 -> fragment = HomePopularFragment()
-            2 -> fragment = HomeRecommendedFragment()
+            1 -> {
+                fragment = HomePopularFragment()
+                // fragment.arguments = Bundle().apply {
+                //     putParcelableArrayList(MainActivity.KEY_DATA, popularList?.let { ArrayList(it) })
+                // }
+            }
+            2 -> {
+                fragment = HomeRecommendedFragment()
+                // fragment.arguments = Bundle().apply {
+                //     putParcelableArrayList(
+                //         MainActivity.KEY_DATA,
+                //         recommendedList?.let { ArrayList(it) })
+                // }
+            }
         }
         return fragment as Fragment
     }

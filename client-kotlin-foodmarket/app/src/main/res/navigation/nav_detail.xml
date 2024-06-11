@@ -12,16 +12,24 @@
         tools:layout="@layout/fragment_detail" >
         <action
             android:id="@+id/action_detailFragment_to_paymentFragment"
-            app:destination="@id/paymentFragment" />
+            app:destination="@id/paymentFragment"
+            app:exitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/paymentFragment"
-        android:name="com.yogadimas.yogadimas_foodmarketbwa.ui.detail.PaymentFragment"
+        android:name="com.yogadimas.yogadimas_foodmarketbwa.ui.detail.payment.PaymentFragment"
         android:label="fragment_payment"
         tools:layout="@layout/fragment_payment" >
         <action
             android:id="@+id/action_paymentFragment_to_paymentSuccessFragment"
-            app:destination="@id/paymentSuccessFragment" />
+            app:destination="@id/paymentSuccessFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <argument
+            android:name="food"
+            app:argType="com.yogadimas.yogadimas_foodmarketbwa.data.local.database.entities.FoodEntity"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
     <fragment
         android:id="@+id/paymentSuccessFragment"

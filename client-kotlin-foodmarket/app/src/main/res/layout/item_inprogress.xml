@@ -2,22 +2,20 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="16dp"
-    android:background="#FFF">
+    android:paddingTop="16dp"
+    android:background="?attr/ydFmColorSurface">
 
-
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/ivPoster"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/rounded.All8dp"
         app:srcCompat="@drawable/iv_sample_product" />
 
     <TextView
@@ -27,17 +25,20 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"
-        android:text="Chery Healthy"
+        android:text="@string/text_dummy_item_title_cherry_healthy"
         app:layout_constraintStart_toEndOf="@+id/ivPoster"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvPrice"
-        style="@style/TextView.PoppinsNormal13sp8D92A3"
+        style="@style/TextView.PoppinsNormal14sp8D92A3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:text="IDR 200.000"
+        android:layout_marginBottom="8dp"
+        android:text="@string/text_dummy_rp_28_000"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivPoster"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
