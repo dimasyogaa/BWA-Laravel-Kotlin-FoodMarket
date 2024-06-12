@@ -42,6 +42,11 @@ class PaymentSuccessFragment : Fragment() {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        (activity as DetailActivity).toolbarDetail()
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
